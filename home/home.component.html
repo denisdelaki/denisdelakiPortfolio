@@ -1,1 +1,45 @@
-<p>home works!</p>
+<!-- NAVBAR -->
+<header class="navbar" @navAnim>
+  <nav class="navbar-container">
+    <span class="logo">DK</span>
+
+    <ul class="nav-links">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/projects">Projects</a></li>
+      <li><a routerLink="/experience">Experience</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" @heroAnim>
+  <p class="hero-intro">Hi, I'm</p>
+
+  <h1 class="hero-name">
+    <span class="typed-name">{{ typedName() }}</span>
+    <span class="cursor">|</span>
+  </h1>
+
+  <h2 class="hero-title">
+    {{ title() }}
+  </h2>
+
+  <p class="hero-description">
+    {{ description() }}
+  </p>
+
+  <div class="hero-actions">
+    <a routerLink="/projects" class="btn-primary">View Projects</a>
+    <a [href]="cvUrl" target="_blank" class="btn-outline">Download CV</a>
+  </div>
+</section>
+
+<!-- QUICK HIGHLIGHTS -->
+<section class="highlights">
+  <div class="highlights-grid">
+    <div *ngFor="let item of highlights()" class="highlight-card" @cardAnim>
+      {{ item }}
+    </div>
+  </div>
+</section>
